@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Результаты анализа</title>
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 60%;
+      margin: 30px auto;
+    }
+    th, td {
+      border: 1px solid #444;
+      padding: 8px 12px;
+      text-align: center;
+    }
+    th {
+      background-color: #f0f0f0;
+    }
+    h2 {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h2>Частота слов в загруженном файле</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Слово</th>
+        <th>Количество</th>
+        <th>Частота</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for word, data in words %}
+      <tr>
+        <td>{{ word }}</td>
+        <td>{{ data[0] }}</td>
+        <td>{{ data[1] }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</body>
+</html>
